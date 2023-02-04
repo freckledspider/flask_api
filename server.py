@@ -1,9 +1,15 @@
-## const express = require("express")
+# const express = require("express")
 import flask
+# const HomeRouter = require("...")
+from controllers import routes
 
-## Create flask all
+# Create Flask All
+# const app = express()
 app = flask.Flask(__name__)
 
-## Run server
-## app.listen (PORT, ...)
+# app.use(HomeRouter)
+app.register_blueprint(routes)
+
+# Run Server
+# app.listen(PORT, ...)
 app.run(port=4000)
